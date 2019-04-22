@@ -2,6 +2,8 @@ const express = require("express");
 const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User");
+const Pelicula = require("../models/pelicula");
+
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -13,11 +15,38 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/auth/profile",
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
 }));
+
+router.get("/profile", (req, res, next) => {
+  res.render("auth/profile");
+});
+
+
+
+// router.post("/profile", (req, res, next) => {
+//     console.log(req.body.title)
+//   omdbapi
+//   .searchTitle(req.body.title)
+//   .then(data=>{
+//     var titleData = data.body.title.items;
+
+  
+
+//   res.render("title",{title:titleData});
+
+
+// })
+// .catch(err=>{
+//   console.log("the error",err);
+// });
+// });
+
+
+
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");

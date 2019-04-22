@@ -1,0 +1,73 @@
+<p>JUAN</p>
+
+
+
+
+<form action="/login" method="POST">
+  <label for="pelicula">Busca tu pelicula</label>
+  <input id="pelicula" type="text" name="pelicula">
+  
+
+  <button  id="search">
+    Buscar </button>
+</form>
+
+<section class ="container">
+<div class="peliculas-container">
+<div class ="peliculas-reseña">
+<div class ="poster">Poster</div>
+<div class ="title">Title</div>
+<div class ="year">Year</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.querySelector('#search').onclick = function (event){
+   event.preventDefault()
+  let peliculas = document.querySelector('#pelicula').value
+  
+axios
+.get(`http://www.omdbapi.com/?s=${peliculas}&apikey=507e1127&type=movie`)
+.then(peliculas=>{
+  console.log(peliculas)
+  let container = document.querySelector('.peliculas-container')
+  container.innerHTML = ""
+  printPelicula(peliculas.data.Search)
+    
+})
+.catch(error=>{
+  console.log(error)
+})
+    //console.log(document.querySelector('#pelicula').value)
+}
+
+function printPelicula(peliculas) {
+ let container = document.querySelector('.peliculas-container')
+ container.innerHTML += `<div class="peliculas-reseña">
+ <div class="poster">${data.Search[0].Poster}</div>
+ <div class="titulo">${data.Search[0].Title}</div>
+ <div class="año">${data.Search[0].Year}</div>
+</div>`
+}
+
+</script>
