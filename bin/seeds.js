@@ -3,14 +3,14 @@
 // To execute this seed, run from the root of the project
 // $ node bin/seeds.js
 
+  require('dotenv').config();
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
-
 const bcryptSalt = 10;
 
 mongoose
-  .connect('mongodb://localhost/movieland', {useNewUrlParser: true})
+  .connect(process.env.MONGO, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
