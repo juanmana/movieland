@@ -1,8 +1,173 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 a {
-  color: #00B7FF;
+
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#container {
+  width: 100%;
+  height: 65vh;
+}
+
+#header {
+  width: 100%;
+  height: 35vh;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#navBar {
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.btn {
+  width: 9rem;
+  padding: 10px;
+  background-color: #F5BE49;
+  display: block;
+  border-radius: 20px;
+  margin: 20px 0px;
+  text-align: center;
+  color: white;
+  border: 0px;
+  ;
+}
+
+.btn:hover {
+  box-shadow: 10px 10px 11px -12px rgba(0, 0, 0, 0.75);
+}
+
+.top {
+  margin-top: 5rem;
+}
+
+#singupContainer {
+  width: 60%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 135px;
+
+}
+
+label {
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin: 1rem 0rem;
+}
+
+#username,
+#password,
+#email {
+  width: 80%;
+  padding: 0.3rem;
+  text-align: center;
+}
+
+#form-container {
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #d8d8d8;
+  border-radius: 2%;
+}
+
+.account-message {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.link {
+  color: rgb(34, 34, 119);
+  font-weight: bold;
+
+}
+
+.white {
+  color: white;
+}
+
+#hamb {
+  width: 100%;
+  height: 4rem;
+  background-color: #f5f5f5;
+  position: fixed;
+}
+
+#hamb img {
+  width: 5rem;
+  height: 1rem;
+  padding: 1rem;
+}
+
+@media (min-width: 500px) and (max-width:800px) {
+  #singupContainer {
+    width: 600px;
+
+    margin-top: 135px;
+
+  }
+
+  #hamb img {
+    width: 6rem;
+
+  }
+
+  #form-container {
+    width: 50%;
+    height: 65vh;
+  }
+}
+
+@media (min-width: 801px) {
+  #singupContainer {
+    width: 40%;
+
+  }
+
+  #form-container {
+    width: 100%;
+    height: 65vh;
+  }
+
+  #hamb img {
+    width: 6rem;
+
+  }
+
+  .logoImage {
+    width: 40%;
+  }
 }

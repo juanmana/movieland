@@ -4,17 +4,17 @@
 
 
 <form action="/login" method="POST">
-  <label for="pelicula">Busca tu pelicula</label>
-  <input id="pelicula" type="text" name="pelicula">
+  <label for="movie">Search movie</label>
+  <input id="movie" type="text" name="movie">
   
 
   <button  id="search">
-    Buscar </button>
+    Search </button>
 </form>
 
 <section class ="container">
-<div class="peliculas-container">
-<div class ="peliculas-reseña">
+<div class="movies-container">
+<div class ="movies-info">
 <div class ="poster">Poster</div>
 <div class ="title">Title</div>
 <div class ="year">Year</div>
@@ -44,15 +44,15 @@
 <script>
   document.querySelector('#search').onclick = function (event){
    event.preventDefault()
-  let peliculas = document.querySelector('#pelicula').value
+  let movies = document.querySelector('#movie').value
   
 axios
-.get(`https://www.omdbapi.com/?s=${peliculas}&apikey=507e1127&type=movie`)
-.then(peliculas=>{
-  let container = document.querySelector('.peliculas-container')
+.get(`https://www.omdbapi.com/?s=${movies}&apikey=507e1127&type=movie`)
+.then(movies=>{
+  let container = document.querySelector('.movies-container')
   container.innerHTML = ""
-  peliculas.data.Search.forEach(pelicula => {
-  printPelicula(pelicula)
+  movies.data.Search.forEach(movie => {
+  printMovie(movie)
 
   })
     
@@ -63,13 +63,13 @@ axios
     //console.log(document.querySelector('#pelicula').value)
 }
 
-function printPelicula(peliculas) {
- let container = document.querySelector('.peliculas-container')
- if(peliculas.Poster != "N/A"){
- container.innerHTML += `<div class="peliculas-reseña">
- <img src= ${peliculas.Poster} class="poster"></img>
- <div class="titulo">${peliculas.Title}</div>
- <div class="año">${peliculas.Year}</div>
+function printMovie(movies) {
+ let container = document.querySelector('.movies-container')
+ if(movies.Poster != "N/A"){
+ container.innerHTML += `<div class="movies-info">
+ <img src= ${movies.Poster} class="poster"></img>
+ <div class="titulo">${movies.Title}</div>
+ <div class="año">${movies.Year}</div>
  <a href="/">see more</a>
  
 </div>`
@@ -77,12 +77,12 @@ function printPelicula(peliculas) {
 
 else
 {
-  container.innerHTML += `<div class="peliculas-reseña">
+  container.innerHTML += `<div class="movies-info">
      
     <img src="../images/no-image.jpeg"></img>
 
- <div class="titulo">${peliculas.Title}</div>
- <div class="año">${peliculas.Year}</div>
+ <div class="titulo">${movies.Title}</div>
+ <div class="año">${movies.Year}</div>
  <a href="/">see more</a>
  
 </div>`
