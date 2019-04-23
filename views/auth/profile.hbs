@@ -49,10 +49,12 @@
 axios
 .get(`http://www.omdbapi.com/?s=${peliculas}&apikey=507e1127&type=movie`)
 .then(peliculas=>{
-  console.log(peliculas.data.Search)
   let container = document.querySelector('.peliculas-container')
   container.innerHTML = ""
-  printPelicula(peliculas.data.Search[0])
+  peliculas.data.Search.forEach(pelicula => {
+  printPelicula(pelicula)
+
+  })
     
 })
 .catch(error=>{
@@ -63,14 +65,27 @@ axios
 
 function printPelicula(peliculas) {
  let container = document.querySelector('.peliculas-container')
+ if(peliculas.Poster != "N/A"){
  container.innerHTML += `<div class="peliculas-reseña">
  <img src= ${peliculas.Poster} class="poster"></img>
  <div class="titulo">${peliculas.Title}</div>
  <div class="año">${peliculas.Year}</div>
  <a href="/">see more</a>
  
-
 </div>`
 }
+
+else
+{
+  container.innerHTML += `<div class="peliculas-reseña">
+     
+    <img src="../images/no-image.jpeg"></img>
+
+ <div class="titulo">${peliculas.Title}</div>
+ <div class="año">${peliculas.Year}</div>
+ <a href="/">see more</a>
+ 
+</div>`
+}}
 
 </script>
