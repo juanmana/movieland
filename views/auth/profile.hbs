@@ -47,7 +47,7 @@
   let peliculas = document.querySelector('#pelicula').value
   
 axios
-.get(`http://www.omdbapi.com/?s=${peliculas}&apikey=507e1127&type=movie`)
+.get(`https://www.omdbapi.com/?s=${peliculas}&apikey=507e1127&type=movie`)
 .then(peliculas=>{
   let container = document.querySelector('.peliculas-container')
   container.innerHTML = ""
