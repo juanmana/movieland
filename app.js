@@ -15,12 +15,13 @@ const flash      = require("connect-flash");
     
 
 mongoose
-  .connect('mongodb://localhost/movieland', {useNewUrlParser: true})
+  .connect(process.env.MONGO, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
   .catch(err => {
     console.error('Error connecting to mongo', err)
+    console.log(`Mongo  URL: ${process.env.MONGO}`)
   });
 
 const app_name = require('./package.json').name;
