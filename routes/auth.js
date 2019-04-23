@@ -14,16 +14,14 @@ router.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
 
+
+
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/auth/profile",
+  successRedirect: "/movies/profile",
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
 }));
-
-router.get("/profile", (req, res, next) => {
-  res.render("auth/profile");
-});
 
 
 

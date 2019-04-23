@@ -70,7 +70,7 @@ function printMovie(movies) {
  <img src= ${movies.Poster} class="poster"></img>
  <div class="titulo">${movies.Title}</div>
  <div class="año">${movies.Year}</div>
- <a href="/">see more</a>
+ <a href="/movies/info-movie/${movies.imdbID}">see more</a>
  
 </div>`
 }
@@ -83,7 +83,7 @@ else
 
  <div class="titulo">${movies.Title}</div>
  <div class="año">${movies.Year}</div>
- <a href="/">see more</a>
+ <a href="/movies/info-movie">see more</a>
  
 </div>`
 }}
