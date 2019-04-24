@@ -48,7 +48,7 @@ router.post('/want/:imdbID', (req, res) => {
 
   User.findByIdAndUpdate(req.user._id, {
       $push: {
-        wantMovies: req.params.imdbID
+        wantMovies: req.params.imdbID,
       }
     }, {
       new: true
@@ -67,7 +67,59 @@ router.post('/want/:imdbID', (req, res) => {
 
 })
 
-router.get('/want', (req, res) => {
+
+router.post('/watched/:imdbID', (req, res) => {
+  //req.user.wantMovies.includes(req.params.id)
+
+  User.findByIdAndUpdate(req.user._id, {
+      $push: {
+        watchedMovies: req.params.imdbID
+      }
+    }, {
+      new: true
+    })
+    .then((usermod) => {
+
+      res.json({
+        movieAssociated: true,
+        movieID: req.params.imdbID,
+        userID: req.user._id
+      })
+
+      //res.render("movies/want", {data})
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//router.get('/want', (req, res) => {
 
   /* const wantedMovies = []
   /* const wantedMovies = []
@@ -80,18 +132,23 @@ router.get('/want', (req, res) => {
         wantedMovies.push(movie.data.Title)
     })
   }) */
-  req.user.wantMovies.forEach(oneMovie=>{
 
-    axios.get(`https://www.omdbapi.com/?i=${oneMovie}&apikey=507e1127&type=movie`)
-    .then(movie => {
-        console.log(movie.data.Title)
-        wantedMovies.push(movie.data.Title)
-    })
-  })
-  data = req.user.wantMovies
-  res.render("movies/want", {
-    data
-  })
+
+  // comentamos esto para la suma a la array de cada pelicula en want movies
+
+
+  // req.user.wantMovies.forEach(oneMovie=>{
+
+  //   axios.get(`https://www.omdbapi.com/?i=${oneMovie}&apikey=507e1127&type=movie`)
+  //   .then(movie => {
+  //       console.log(movie.data.Title)
+  //       wantedMovies.push(movie.data.Title)
+  //   })
+  // })
+  // data = req.user.wantMovies
+  // res.render("movies/want", {
+  //   data
+  // })
 
 
 })

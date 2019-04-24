@@ -16,13 +16,18 @@
 <p>Year: {{movie.data.Year}}</p>
 <p>Released: {{movie.data.Released}}</p>
 
-<button id="want">Click me!</button>
+<button id="want">Want</button>
+<i id="tick" style="display: none">V</i>
+
+<button id="watched">Watched</button>
+<i id="tick" style="display: none">V</i>
 
 
-<a href='/movies/watch/{{movie.data.imdbID}}' />
+
+{{!-- <a href='/movies/watch/{{movie.data.imdbID}}' />
 Watched
 </a>
-
+ --}}
 
 <p>Runtime: {{movie.data.Runtime}}</p>
 <p>Genre: {{movie.data.Genre}}</p>
@@ -44,13 +49,28 @@ Watched
       .post("/movies/want/{{movie.data.imdbID}}")
       .then(response => {
         if (response.data.movieAssociated) {
-          alert("show tick verde")
+          document.querySelector("#tick").style.display = "block"
         }
       })
 
   }
 
 
+
+
+
+
+document.querySelector('#watched').onclick = function (event) {
+    event.preventDefault()
+    axios
+      .post("/movies/watched/{{movie.data.imdbID}}")
+      .then(response => {
+        if (response.data.movieAssociated) {
+          document.querySelector("#tick").style.display = "block"
+        }
+      })
+
+  }
 
 
 </script>
