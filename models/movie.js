@@ -14,7 +14,7 @@ const movieSchema = new Schema({
   Country:{type:String},
   Poster: {type:String},
   imbdRating: {type:String},
-  imbdID:{type:String},
+  imdbID:{type:String},
   Website:{type:String},
 
 

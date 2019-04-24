@@ -1,8 +1,7 @@
-
 <div>
 
-  <img src ="" alt="imagen-perfil"  />
-<h1></h1>
+  <img src="" alt="imagen-perfil" />
+  <h1></h1>
 
 </div>
 
@@ -12,17 +11,17 @@
 
 
 
-<p>Poster: <img src={{movie.data.Poster}}/></p>
+<p>Poster: <img src={{movie.data.Poster}} /></p>
 <p>Title: {{movie.data.Title}}</p>
 <p>Year: {{movie.data.Year}}</p>
 <p>Released: {{movie.data.Released}}</p>
 
+<button id="want">Click me!</button>
 
-<button>Want</button>
 
-
-<button>Watched</button>
-
+<a href='/movies/watch/{{movie.data.imdbID}}' />
+Watched
+</a>
 
 
 <p>Runtime: {{movie.data.Runtime}}</p>
@@ -37,4 +36,21 @@
 <p>Website: {{movie.data.Website}}</p>
 
 
+<script>
 
+  document.querySelector('#want').onclick = function (event) {
+    event.preventDefault()
+    axios
+      .post("/movies/want/{{movie.data.imdbID}}")
+      .then(response => {
+        if (response.data.movieAssociated) {
+          alert("show tick verde")
+        }
+      })
+
+  }
+
+
+
+
+</script>
