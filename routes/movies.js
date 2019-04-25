@@ -74,7 +74,6 @@ router.post('/want/:imdbID', (req, res) => {
     })
     .then(movie => {
       let id = movie._id;
-      console.log(movie)
       User.findByIdAndUpdate(req.user._id, {
           $push: {
             wantMovies: id,
@@ -100,7 +99,6 @@ router.post('/watched/:imdbID', (req, res) => {
     })
     .then(movie => {
       let id = movie._id;
-      console.log(movie)
       User.findByIdAndUpdate(req.user._id, {
           $push: {
             watchedMovies: id,
