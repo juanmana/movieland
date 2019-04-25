@@ -20,7 +20,7 @@
 <i id="tick" style="display: none">V</i>
 
 <button id="watched">Watched</button>
-<i id="tick" style="display: none">V</i>
+<i id="tick1" style="display: none">V</i>
 
 
 
@@ -74,7 +74,7 @@ document.querySelector('#watched').onclick = function (event) {
       .post("/movies/watched/{{movie.data.imdbID}}")
       .then(response => {
         if (response.data.movieAssociated) {
-          document.querySelector("#tick").style.display = "block"
+          document.querySelector("#tick1").style.display = "block"
         }
       })
 

@@ -5,11 +5,38 @@ const User = require('../models/User');
 const Movie = require('../models/movie');
 
 router.get("/profile", (req, res, next) => {
-  console.log(req.user)
-
-  console.log(req.session.passport.user)
-  res.render("movies/profile");
+  User.findById(req.user.id)
+    .then(user => {
+      res.render("movies/profile", {user})
+    });
 });
+
+router.get('/want', (req, res) => {
+
+  User.findById(req.user.id)
+    .populate("wantMovies")
+    .then(userInfo => {
+      const movies = userInfo.wantMovies
+      res.render("movies/want", {
+        movies
+      })
+    })
+    .catch(error => console.log(error))
+})
+
+router.get('/watched', (req, res) => {
+
+  User.findById(req.user.id)
+    .populate("watchedMovies")
+    .then(userInfo => {
+      const moviesWatched = userInfo.watchedMovies
+      res.render("movies/watched", {
+        moviesWatched
+      })
+    })
+    .catch(error => console.log(error))
+})
+
 
 
 router.get("/info-movie/:imdbID", (req, res, next) => {
@@ -21,13 +48,11 @@ router.get("/info-movie/:imdbID", (req, res, next) => {
       if (foundMovie.length === 0) {
         axios.get(`https://www.omdbapi.com/?i=${req.params.imdbID}&apikey=507e1127&type=movie`)
           .then(movie => {
-            console.log(movie)
             Movie
               .create(movie.data)
               .then(movieSaved => res.render("movies/info-movie", {
                 movie
               }))
-            // , want, watched
           })
       } else {
         res.render("movies/info-movie", {
@@ -43,112 +68,90 @@ router.get("/info-movie/:imdbID", (req, res, next) => {
 })
 
 router.post('/want/:imdbID', (req, res) => {
-  //req.user.wantMovies.includes(req.params.id)
-  console.log(req.session.passport.user)
 
-  User.findByIdAndUpdate(req.user._id, {
-      $push: {
-        wantMovies: req.params.imdbID,
-      }
-    }, {
-      new: true
+  Movie.findOne({
+      imdbID: req.params.imdbID
     })
-    .then((usermod) => {
-
-      res.json({
-        movieAssociated: true,
-        movieID: req.params.imdbID,
-        userID: req.user._id
-      })
-
-      //res.render("movies/want", {data})
-
+    .then(movie => {
+      let id = movie._id;
+      console.log(movie)
+      User.findByIdAndUpdate(req.user._id, {
+          $push: {
+            wantMovies: id,
+          }
+        }, {
+          new: true
+        })
+        .then((usermod) => {
+          res.json({
+            movieAssociated: true,
+            movieID: req.params.imdbID,
+            userID: req.user._id
+          })
+        })
     })
-
 })
 
 
 router.post('/watched/:imdbID', (req, res) => {
-  //req.user.wantMovies.includes(req.params.id)
 
-  User.findByIdAndUpdate(req.user._id, {
-      $push: {
-        watchedMovies: req.params.imdbID
-      }
-    }, {
-      new: true
+  Movie.findOne({
+      imdbID: req.params.imdbID
     })
-    .then((usermod) => {
-
-      res.json({
-        movieAssociated: true,
-        movieID: req.params.imdbID,
-        userID: req.user._id
-      })
-
-      //res.render("movies/want", {data})
-
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//router.get('/want', (req, res) => {
-
-  /* const wantedMovies = []
-  /* const wantedMovies = []
-  
-  req.user.wantMovies.forEach(oneMovie=>{
-
-    axios.get(`https://www.omdbapi.com/?i=${oneMovie}&apikey=507e1127&type=movie`)
     .then(movie => {
-        console.log(movie.data.Title)
-        wantedMovies.push(movie.data.Title)
+      let id = movie._id;
+      console.log(movie)
+      User.findByIdAndUpdate(req.user._id, {
+          $push: {
+            watchedMovies: id,
+          }
+        }, {
+          new: true
+        })
+        .then((usermod) => {
+          res.json({
+            movieAssociated: true,
+            movieID: req.params.imdbID,
+            userID: req.user._id
+          })
+        })
     })
-  }) */
 
 
-  // comentamos esto para la suma a la array de cada pelicula en want movies
 
 
-  // req.user.wantMovies.forEach(oneMovie=>{
 
-  //   axios.get(`https://www.omdbapi.com/?i=${oneMovie}&apikey=507e1127&type=movie`)
-  //   .then(movie => {
-  //       console.log(movie.data.Title)
-  //       wantedMovies.push(movie.data.Title)
-  //   })
-  // })
-  // data = req.user.wantMovies
-  // res.render("movies/want", {
-  //   data
-  // })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 })
