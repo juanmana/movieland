@@ -41,11 +41,9 @@ router.get('/watched', (req, res) => {
 
 
 router.get("/info-movie/:imdbID", (req, res, next) => {
-  
-
   Movie
     .find({
-      imbdID: req.params.imdbID
+      imdbID: req.params.imdbID
 
 
     })
@@ -56,15 +54,25 @@ router.get("/info-movie/:imdbID", (req, res, next) => {
             Movie
               .create(movie.data)
               .then(movieSaved => {
-                let data = {movie, user: req.user}
+                const peliculas = req.user.wantMovies.map(e => e.toString())
+                const pelicula = movieSaved._id.toString()
+                let data = {movie: movieSaved, 
+                  user: req.user,
+                  isWanted: peliculas.includes(pelicula)}
                 res.render("movies/info-movie", {
                   data
                 })
               })
           })
       } else {
+        const peliculas = req.user.wantMovies.map(e => e.toString())
+        const pelicula = foundMovie[0]._id.toString()
+          let data = {movie: foundMovie[0], 
+          user: req.user, 
+          isWanted: peliculas.includes(pelicula)}
+
         res.render("movies/info-movie", {
-          foundMovie
+          data
         })
       }
     })
@@ -76,11 +84,10 @@ router.get("/info-movie/:imdbID", (req, res, next) => {
 })
 
 router.post('/want/:imdbID', (req, res) => {
-
+  
   Movie.findOne({
       imdbID: req.params.imdbID
     })
- 
     .then(movie => {
       let id = movie._id;
       User.findByIdAndUpdate(req.user._id, {
