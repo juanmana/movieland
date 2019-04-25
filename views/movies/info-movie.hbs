@@ -33,22 +33,27 @@
 
 
       <div class="picContInfoMovie">
-        <img src={{data.movie.data.Poster}} id="pic-info-movie" />
+        <img src={{data.movie.Poster}} id="pic-info-movie" />
       </div>
       <div id="container-info-movie">
         <div id="upMovie">
-          <h3> {{data.movie.data.Title}}</h3>
-          <p class="dataYearInfo bold">{{data.movie.data.Year}}
-            <span class="cyan"> {{data.movie.data.Released}}</span></p>
+          <h3> {{data.movie.Title}}</h3>
+          <p class="dataYearInfo bold">{{data.movie.Year}}
+            <span class="cyan"> {{data.movie.Released}}</span></p>
         </div>
         <div class="btnBigInfo">
+          {{#if data.isWanted}}
+          <p>added</p>
+          {{else}}
           <button id="want">Want
             <i id="tick" style="visibility: hidden">
               <img class="icon" src="/images/icons.svg" alt="icon" />
             </i>
           </button>
 
+          {{/if}}
 
+            
           <button id="watched"><span class="">Watched</span>
             <i id="tick1" style="visibility: hidden">
               <img class="icon" src="/images/icons.svg" alt="icon" />
@@ -58,29 +63,29 @@
 
         </div>
 
-        {{!-- <a href='/movies/watch/{{movie.data.imdbID}}' />
+        {{!-- <a href='/movies/watch/{{movie.imdbID}}' />
 Watched
 </a>
  --}}
         <div id="information">
-          <p><span class="bold">Runtime: </span>{{data.movie.data.Runtime}}</p>
-          <p><span class="bold">Genre:</span> {{data.movie.data.Genre}}</p>
-          <p><span class="bold">Director:</span> {{data.movie.data.Director}}</p>
-          <p><span class="bold">Actors:</span> {{data.movie.data.Actors}}</p>
-          <p><span class="bold">Plot: </span>{{data.movie.data.Plot}}</span>
-          <p><span class="bold">Language:</span> {{data.movie.data.Language}}</p>
-          <p><span class="bold">Country:</span> {{data.movie.data.Country}}</p>
-          <p><span class="bold">imdbRating:</span> {{data.movie.data.imdbRating}}</p>
-          <p><span class="bold">imdbID:</span> {{data.movie.data.imdbID}}</p>
-          <p><span class="bold">Website: {{data.movie.data.Website}}</p></span>
+          <p><span class="bold">Wanted</span>{{data.isWanted}}</p>
+          <p><span class="bold">Runtime: </span>{{data.movie.Runtime}}</p>
+          <p><span class="bold">Genre:</span> {{data.movie.Genre}}</p>
+          <p><span class="bold">Director:</span> {{data.movie.Director}}</p>
+          <p><span class="bold">Actors:</span> {{data.movie.Actors}}</p>
+          <p><span class="bold">Plot: </span>{{data.movie.Plot}}</span>
+          <p><span class="bold">Language:</span> {{data.movie.Language}}</p>
+          <p><span class="bold">Country:</span> {{data.movie.Country}}</p>
+          <p><span class="bold">imdbRating:</span> {{data.movie.imdbRating}}</p>
+          <p><span class="bold">imdbID:</span> {{data.movie.imdbID}}</p>
+          <p><span class="bold">Website: {{data.movie.Website}}</p></span>
         </div>
 
         <script>
-
           document.querySelector('#want').onclick = function (event) {
             event.preventDefault()
             axios
-              .post(`/movies/want/{{data.movie.data.imdbID}}`)
+              .post(`/movies/want/{{data.movie.imdbID}}`)
               .then(response => {
                 if (response.data.movieAssociated) {
                   document.querySelector("#tick").style.visibility = "visible";
@@ -89,15 +94,10 @@ Watched
 
           }
 
-
-
-
-
-
           document.querySelector('#watched').onclick = function (event) {
             event.preventDefault()
             axios
-              .post("/movies/watched/{{data.movie.data.imdbID}}")
+              .post("/movies/watched/{{data.movie.imdbID}}")
               .then(response => {
                 if (response.data.movieAssociated) {
                   document.querySelector("#tick1").style.visibility = "visible";
