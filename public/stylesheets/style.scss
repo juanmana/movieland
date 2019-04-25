@@ -3,6 +3,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: 'Open Sans', sans-serif;
+
 }
 
 h2 {
@@ -11,6 +12,7 @@ h2 {
   margin-bottom: 10px;
   font-weight: bold;
 }
+
 #container {
   width: 100%;
   height: 65vh;
@@ -20,11 +22,11 @@ a {
   text-decoration: none;
 }
 
-.btnWant a{
+.btnWant a {
   color: white;
 }
 
-.btnWatched a{
+.btnWatched a {
   color: white;
 }
 
@@ -35,10 +37,12 @@ a {
   display: flex;
   align-items: center;
 }
+
 .logoImage {
   width: 60%;
   margin: 0 auto;
 }
+
 #navBar {
   width: 100%;
   height: 65vh;
@@ -47,9 +51,11 @@ a {
   flex-direction: column;
   align-items: center;
 }
+
 .btn-profile:hover {
   box-shadow: 10px 10px 11px -12px rgba(0, 0, 0, 0.75);
 }
+
 #singupContainer {
   width: 30rem;
   height: 60vh;
@@ -58,41 +64,50 @@ a {
   align-items: center;
   flex-direction: column;
   margin-top: 135px;
-  
+
 }
-.btn-login,.btn-signup,.btn-index{
+
+.btn-login,
+.btn-signup,
+.btn-index {
   width: 9rem;
   padding: 10px;
   display: block;
   border-radius: 20px;
- margin: 20px 0px;
- padding: 10px;
+  margin: 20px 0px;
+  padding: 10px;
   text-align: center;
   color: white;
   border: 0px;
-  background-color:#F5BE49;
+  background-color: #F5BE49;
 }
-.btn-login,.btn-signup,.btn-index:hover{
+
+.btn-login,
+.btn-signup,
+.btn-index:hover {
   box-shadow: 10px 10px 11px -12px rgba(0, 0, 0, 0.75);
 }
-.label-login,.label-signup{
- text-align: center;
- color: white;
+
+.label-login,
+.label-signup {
+  text-align: center;
+  color: white;
   margin: 1rem 0rem;
 }
+
 .label-profile {
-  
- /* text-align: center;*/
   color: white;
- /* margin: 1rem 0rem;*/
+
 }
+
 #username,
 #password,
 #email {
   width: 80%;
   padding: 0.3rem;
-  
+
 }
+
 #form-container {
   width: 35rem;
   height: 65vh;
@@ -103,14 +118,17 @@ a {
   background-color: #d8d8d8;
   border-radius: 2%;
 }
+
 .account-message {
   font-size: 15px;
   margin-top: 10px;
 }
+
 .link {
   color: rgb(34, 34, 119);
   font-weight: bold;
 }
+
 #hamb {
   width: 100%;
   height: 7vh;
@@ -119,26 +137,22 @@ a {
   display: flex;
   justify-content: space-between;
 }
-/*
-.logoImage {
-  width: 5rem;
-  height: 1rem;
-  padding: 1rem;
-}
-*/
+
 .logoImageInfo {
   width: 5rem;
   height: 1rem;
   padding: 1rem;
 }
+
 /*------empieza profile ----------*/
 #profileCont {
   width: 80%;
   height: auto;
   margin-top: 3rem;
-  /*background-color: grey;*/
-  
+
+
 }
+
 #profileHeader {
   width: 100%;
   height: 20vh;
@@ -146,16 +160,16 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /*background-color: red;*/
-  margin-top:7vh;
+  margin-top: 7vh;
 }
+
 .formProfile {
   width: 100%;
   height: 7vh;
-  font-size:12px;
-  display:flex;
- /* margin: 0 auto;*/
+  font-size: 12px;
+  display: flex;
 }
+
 #avatar {
   background-color: rgb(68, 56, 56);
   width: 60px;
@@ -164,39 +178,43 @@ a {
   display: flex;
   justify-content: center;
 }
+
 #box {
   width: 100%;
   height: auto;
- 
+
 }
+
 .white {
   color: white;
 }
+
 .black {
   color: black;
   text-align: left;
- 
+
 }
+
 .poster-profile {
   width: 80%;
- 
+
 }
-.container{
-  
+
+.container {
   width: 100%;
   display: flex;
-  color:black;
+  color: black;
   margin: 0 auto;
-  
+
 }
-.movies-container{
+
+.movies-container {
   width: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 10px 0px;
- 
-  
+
 }
 
 /*------CAMBIOOOOS Login peq---------------*/
@@ -208,9 +226,10 @@ a {
   align-items: center;
   flex-direction: column;
   margin-top: 135px;
-  
+
 
 }
+
 #form-container {
   width: 90%;
   height: 65vh;
@@ -221,11 +240,13 @@ a {
   background-color: #d8d8d8;
   border-radius: 2%;
 }
+
 .logoImageSmall {
   width: 30%;
   padding: 10px;
 
 }
+
 .btn-profile {
   width: 100px;
   padding: 10px;
@@ -234,29 +255,32 @@ a {
   text-align: center;
   color: white;
   border: 0px;
-  background-color:#F5BE49;
+  background-color: #F5BE49;
 
 }
-.btnWant, .btnWatched{
+
+.btnWant,
+.btnWatched {
   width: 4rem;
   padding: 5px;
   justify-content: center;
   border-radius: 20px;
-    margin: 0px 5px;
+  margin: 0px 5px;
   text-align: center;
   color: white;
   border: 0px;
-  background-color:#F5BE49;
- }
+  background-color: #F5BE49;
+}
 
- .btnContainer{
+.btnContainer {
   flex-direction: row;
   justify-content: center;
   display: flex;
   margin-bottom: 20px;
- 
+
 }
-.btn-logout-profile{
+
+.btn-logout-profile {
   width: 90px;
   height: 5vh;
   padding: 5px;
@@ -265,96 +289,102 @@ a {
   text-align: center;
   color: white;
   border: 0px;
-   margin-top:5px;
+  margin-top: 5px;
 
 }
 
-.imput-profile{
+.imput-profile {
   flex-grow: 2;
   height: 30px;
- 
- }
- .movies-info{
-  width: 20%;
-  margin:2.5px;
+
 }
 
-.elementsRight{
+.movies-info {
+  width: 20%;
+  margin: 2.5px;
+}
+
+.elementsRight {
   width: 100px;
   display: flex;
   align-items: center;
-  
+
 }
-img#avatarSmall{
+
+img#avatarSmall {
   width: 20px;
   height: 20px;
   border-radius: 100%;
   margin-right: 15px;
 
 }
-#container0{
+
+#container0 {
   width: 100%;
+  height: auto;
+
 }
-#pic-info-movie{
+
+#pic-info-movie {
   width: 250px;
   height: 220px;
   margin: 0 auto;
-  
+
 }
-.picContInfoMovie{
+
+.picContInfoMovie {
   height: auto;
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: center;
- 
+
 }
-.btnContainer{
+
+.btnContainer {
   flex-direction: row;
   justify-content: center;
   display: flex;
 }
-#want, #watched{
+
+#want,
+#watched {
   width: 5rem;
   height: 45px;
   padding: 1px;
   justify-content: center;
   border-radius: 20px;
-    margin: 10px 5px;
+  margin: 10px 5px;
   text-align: center;
   color: white;
   border: 0px;
-  background-color:#F5BE49;
+  background-color: #F5BE49;
   display: flex;
   align-items: center;
- }
+}
 
- .btnBigInfo{
+.btnBigInfo {
   width: 100%;
- display:flex;
-  flex-direction: row; 
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
   padding-bottom: 5px;
 }
-#container-info-movie{
+
+#container-info-movie {
   height: auto;
   width: 100%;
- text-align: center;
-
- margin-left:40px;
- justify-content: center;
+  margin-left: 40px;
+  justify-content: center;
 
 }
 
-.contInfoMovie{
-  width: 100%; 
-  margin-top:20px;
-
-  
-  
+.contInfoMovie {
+  width: 100%;
+  margin-top: 20px;
 }
-.info-movie{
-  margin-top:50px;
-  
+
+.info-movie {
+  margin-top: 50px;
+
 }
 
 @media (min-width: 500px) and (max-width:800px) {
@@ -362,300 +392,323 @@ img#avatarSmall{
     width: 60rem;
     margin-top: 135px;
   }
- 
+
   #form-container {
     width: 35 rem;
     height: 60vh;
   }
+
   .label-profile {
-    
-    font-size:18px;
-  /*  padding: 3px 0px;width: 50%;*/
-}
-.poster-profile {
+
+    font-size: 18px;
+
+  }
+
+  .poster-profile {
     width: 100%;
     height: 300px;
   }
+
   #box {
     width: 100%;
     height: auto;
-    
-    }
-  .movies-container{
+
+  }
+
+  .movies-container {
     width: 100%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 10px 0px;
-    
-  
+
+
   }
-  .movies-info{
+
+  .movies-info {
     width: 40%;
-    margin:15px;
-    
+    margin: 15px;
+
   }
-  /* .black{
-   font-size:18px;
-   
-    margin-top: 0px; 
-    margin-left: 0px;
-  }
-  #movie{
-    margin-top: 0px; 
-    margin-left: 0px;
-    
-  }*/
-  .black{
+
+  .black {
     font-size: 18px;
     line-height: 1.5em;
   }
 }
+
 @media (min-width: 801px) {
-  #container0{
+  #container0 {
     width: 60%;
   }
+
   #singupContainer {
     width: 40%;
   }
+
   #form-container {
     width: 35 rem;
     height: 70vh;
-   /* margin-right: 15px;*/
-    
-   
-    
   }
- 
-  
-  
-   
-  /* .black  margin:0px 30px 0px 87px;*/
-    
-  
-   
+
   .logoImageSmall {
     width: 100px;
     padding: 10px;
   }
+
   .poster-profile {
     width: 100%;
     height: 180px;
   }
+
   .logoImage {
     width: 40%;
   }
-  
- /*  .btn{
-      width: 1rem;
-     margin-left: 1rem;
-      padding: 5px;
-  }*/
+
   .top {
     margin-top: 5rem;
   }
-  
-  .movies-container{
+
+  .movies-container {
     width: 58%;
     font-size: 18px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 0 auto;
-    margin-top:35px;
-    
+    margin-top: 35px;
+
   }
-  .movies-info{
+
+  .movies-info {
     width: 20%;
-    margin:2.5px;
-   
-    
+    margin: 2.5px;
   }
-  .userName{
-    margin-top:5px;
-    font-size:24px;
+
+  .userName {
+    margin-top: 5px;
+    font-size: 24px;
+    text-transform: capitalize;
   }
+
   .formProfile {
-  width: 100%;
-  height: 7vh;
-  font-size:12px;
-  display: flex;
-  
-}
-.imput-profile{
-  flex-grow: 3;
-  margin-right: 20px;
-/*   padding:5px;*/
- }
- .label-profile{
-   flex-grow: 1;
-  text-align: center;
-   font-size: 18px;
-   line-height: 1.8em;
-   color:black;
- }
-.btn-profile{
-   flex-grow: 1;
- }
- .title, .bold{
-  font-weight: bold;
- }
+    width: 100%;
+    height: 7vh;
+    font-size: 12px;
+    display: flex;
+
+  }
+
+  .imput-profile {
+    flex-grow: 3;
+    margin-right: 20px;
+  }
+
+  .label-profile {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8em;
+    color: black;
+  }
+
+  .btn-profile {
+    flex-grow: 1;
+  }
+
+  .title,
+  .bold {
+    font-weight: bold;
+  }
 
 
- .year, .linkProfile,.dataYearInfo{
-   font-size: 13px;
-   
- }
- .linkProfile a p{
-  color:#49b5f5 ;
- }
- .btnContainer{
-   flex-direction: row;
-   justify-content: center;
-  /* background-color: yellowgreen;*/
-   display: flex;
-   margin-bottom: 20px;
-  
- }
-.btn-logout-profile{
-  width: 90px;
-  height: 5vh;
-  padding: 5px;
-  background-color: #F5BE49;
-  border-radius: 20px;
-  text-align: center;
-  color: white;
-  border: 0px;
-   margin-top:5px;
-   
- 
-}
+  .year,
+  .linkProfile,
+  .dataYearInfo {
+    font-size: 13px;
 
-.btn-logout-profile a{
-color:white;
+  }
 
-}
- .btnWant, .btnWatched{
-  width: 5rem;
-  padding: 5px;
-  justify-content: center;
-  border-radius: 20px;
+  .linkProfile a p {
+    color: #49b5f5;
+  }
+
+  .btnContainer {
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .btn-logout-profile {
+    width: 90px;
+    height: 5vh;
+    padding: 5px;
+    background-color: #F5BE49;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    border: 0px;
+    margin-top: 5px;
+  }
+
+  .btn-logout-profile a {
+    color: white;
+  }
+
+  .btnWant,
+  .btnWatched {
+    width: 5rem;
+    padding: 5px;
+    justify-content: center;
+    border-radius: 20px;
     margin: 0px 5px;
-  text-align: center;
-  color: white;
-  border: 0px;
-  background-color:#F5BE49;
+    text-align: center;
+    color: white;
+    border: 0px;
+    background-color: #F5BE49;
 
- }
- 
-/*.btn{
-  width: 50px;
-  margin-left:45px;
-}*/
-.btn-profile {
-  width: 5rem;
-  padding: 10px;
-  display: block;
-  border-radius: 20px;
-/*  margin: 20px 0px;*/
-  text-align: center;
-  color: white;
-  border: 0px;
-  background-color:#F5BE49;
-}
-#pic-info-movie{
-  width: 160px;
-  height: 220px;
-}
-#contInfoMovie{
- 
-  
-  width: 100%;
-  display: flex;
-  margin-top:40px;
-}
-.picContInfoMovie{
-  height: auto;
-  width: 40%;
-  justify-content: flex-start;
- 
-}
-h3{
-font-size:20px;
-font-weight: bold;}
-#container-info-movie{
- 
-  height: auto;
-  width: 70%;
-  justify-content: flex-end;
-  
- 
-}
-.contInfoMovie{
-  width: 100%; 
-  margin-top:20px;
-  margin-left: 20px;
-  
-  
-}
-.info-movie{
-  margin-top:50px;
-  
-}
-#want, #watched{
-  width: 7rem;
-  height: 35px;
-  padding: 10px;
-  justify-content: center;
-  border-radius: 20px;
-  margin: 10px 5px;
-  text-align: center;
-  color: white;
-  border: 0px;
-  background-color:#F5BE49;
-  display: flex;
-  align-items: center;
- 
-  
- }
- .icon{
-   width: 65%;
-   
- }
- #information{
-   font-size:15px;
-   padding:20px 0px;
-   line-height: 1.5em;
-   padding-left: 15px;
- }
-.cyan{
-  color:#49b5f5 ;
-}
-#upMovie{
-  line-height: 1.5em;
-  padding-left: 15px;
-}
-.gray{
-  color: #b4adad;
-}
-.btnBigInfo{
-  width: 100%;
- 
-  display:flex;
-  flex-direction: row;
- 
-  
-}
-img#avatarSmall{
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  margin-right: 15px;
-}
-.elementsRight{
-  width: 200px;
-  display: flex;
-  align-items: center;
-  
-}
+  }
+
+  .btn-profile {
+    width: 3rem;
+    height: 2.5rem;
+    padding: 10px;
+    display: block;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    border: 0px;
+    background-color: #F5BE49;
+  }
+
+  #pic-info-movie {
+    width: 160px;
+    height: 220px;
+  }
+
+  #contInfoMovie {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: flex;
+    margin-top: 40px;
+  }
+
+  .picContInfoMovie {
+    height: auto;
+    width: 40%;
+    justify-content: flex-start;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  #container-info-movie {
+    height: auto;
+    width: 70%;
+    justify-content: flex-end;
+  }
+
+  .contInfoMovie {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .info-movie {
+    margin-top: 50px;
+  }
+
+  #want,
+  #watched {
+    width: 7rem;
+    height: 35px;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 10px 5px;
+    text-align: center;
+    color: white;
+    border: 0px;
+    background-color: #F5BE49;
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    width: 65%;
+  }
+
+  #information {
+    font-size: 15px;
+    padding: 20px 0px;
+    line-height: 1.5em;
+    padding-left: 15px;
+  }
+
+  .cyan {
+    color: #49b5f5;
+  }
+
+  #upMovie {
+    line-height: 1.5em;
+    padding-left: 15px;
+  }
+
+  .gray {
+    color: #b4adad;
+  }
+
+  .btnBigInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  img#avatarSmall {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-right: 15px;
+  }
+
+  .elementsRight {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    }
+
+  .picWatched {
+    width: 130px;
+    height: 180px;
+
+  }
+
+  #containerPictureWatched {
+    width: 20%;
+    margin: 2.5px;
+  }
+
+  #containerWatched {
+
+    width: 60%;
+    height: auto;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 35px;
+
+  }
+
+  #posterWatched {
+    width: 22%;
+    height: 250px;
+
+  }
+
 }
