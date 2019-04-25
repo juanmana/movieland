@@ -12,12 +12,13 @@
     Search </button>
 </form>
 
+
+ <a href="/" class="btn">logout</a>
+
 <section class ="container">
 <div class="movies-container">
 <div class ="movies-info">
-<div class ="poster">Poster</div>
-<div class ="title">Title</div>
-<div class ="year">Year</div>
+
 
 
 </div>
@@ -25,8 +26,8 @@
 
 </div>
 
-
-
+<a href="/movies/want" class="btn">Want</a>
+<a href="/movies/watched" class="btn">Watched</a>
 
 
 
@@ -83,7 +84,7 @@ else
 
  <div class="titulo">${movies.Title}</div>
  <div class="año">${movies.Year}</div>
- <a href="/movies/info-movie">see more</a>
+ <a href="/movies/info-movie/${movies.imdbID}">see more</a>
  
 </div>`
 }}
