@@ -11,6 +11,7 @@ router.get("/profile", (req, res, next) => {
     });
 });
 
+
 router.get('/want', (req, res) => {
 
   User.findById(req.user.id)
@@ -40,9 +41,13 @@ router.get('/watched', (req, res) => {
 
 
 router.get("/info-movie/:imdbID", (req, res, next) => {
+  
+
   Movie
     .find({
       imbdID: req.params.imdbID
+
+
     })
     .then(foundMovie => {
       if (foundMovie.length === 0) {
@@ -50,9 +55,12 @@ router.get("/info-movie/:imdbID", (req, res, next) => {
           .then(movie => {
             Movie
               .create(movie.data)
-              .then(movieSaved => res.render("movies/info-movie", {
-                movie
-              }))
+              .then(movieSaved => {
+                let data = {movie, user: req.user}
+                res.render("movies/info-movie", {
+                  data
+                })
+              })
           })
       } else {
         res.render("movies/info-movie", {
@@ -72,6 +80,7 @@ router.post('/want/:imdbID', (req, res) => {
   Movie.findOne({
       imdbID: req.params.imdbID
     })
+ 
     .then(movie => {
       let id = movie._id;
       User.findByIdAndUpdate(req.user._id, {

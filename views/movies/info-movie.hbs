@@ -1,84 +1,114 @@
-<div>
+<div id="hamb">
+  <a href="/">
+    <img class="logoImageSmall" src="/images/logo.png" alt="logo" />
+  </a>
+  <div class="elementsRight">
+     <a href="/movies/profile"><img src="/images/descarga.jpeg" id="avatarSmall" alt="avatar" /></a>
+    <button class="btn-logout-profile">
+   <a href="/">Logout</a>
 
-  <img src="" alt="imagen-perfil" />
-  <h1></h1>
-
+    </button>
+  </div>
 </div>
+<div id="container0">
 
 
+  <div id="profileCont" class="info-movie">
+    <div id="profileHeader">
+      <img src="/images/descarga.jpeg" id="avatar" alt="avatar" />
+
+      <h3 class="userName">{{data.user.username}}</h3>
+    </div>
+    <div class="btnContainer">
+      <button class="btnWant left">
+          <a href="/movies/want">Want</a>
+      </button>
+      <button class="btnWatched">
+          <a href="/movies/watched">Watched</a>
+      </button>
+    </div>
 
 
+    <div id="contInfoMovie">
 
 
+      <div class="picContInfoMovie">
+        <img src={{data.movie.data.Poster}} id="pic-info-movie" />
+      </div>
+      <div id="container-info-movie">
+        <div id="upMovie">
+          <h3> {{data.movie.data.Title}}</h3>
+          <p class="dataYearInfo bold">{{data.movie.data.Year}}
+            <span class="cyan"> {{data.movie.data.Released}}</span></p>
+        </div>
+        <div class="btnBigInfo">
+          <button id="want">Want
+            <i id="tick" style="visibility: hidden">
+              <img class="icon" src="/images/icons.svg" alt="icon" />
+            </i>
+          </button>
 
-<p>Poster: <img src={{movie.data.Poster}} /></p>
-<p>Title: {{movie.data.Title}}</p>
-<p>Year: {{movie.data.Year}}</p>
-<p>Released: {{movie.data.Released}}</p>
 
-<button id="want">Want</button>
-<i id="tick" style="display: none">V</i>
-
-<button id="watched">Watched</button>
-<i id="tick1" style="display: none">V</i>
+          <button id="watched"><span class="">Watched</span>
+            <i id="tick1" style="visibility: hidden">
+              <img class="icon" src="/images/icons.svg" alt="icon" />
+            </i>
+          </button>
 
 
+        </div>
 
-{{!-- <a href='/movies/watch/{{movie.data.imdbID}}' />
+        {{!-- <a href='/movies/watch/{{movie.data.imdbID}}' />
 Watched
 </a>
  --}}
+        <div id="information">
+          <p><span class="bold">Runtime: </span>{{data.movie.data.Runtime}}</p>
+          <p><span class="bold">Genre:</span> {{data.movie.data.Genre}}</p>
+          <p><span class="bold">Director:</span> {{data.movie.data.Director}}</p>
+          <p><span class="bold">Actors:</span> {{data.movie.data.Actors}}</p>
+          <p><span class="bold">Plot: </span>{{data.movie.data.Plot}}</span>
+          <p><span class="bold">Language:</span> {{data.movie.data.Language}}</p>
+          <p><span class="bold">Country:</span> {{data.movie.data.Country}}</p>
+          <p><span class="bold">imdbRating:</span> {{data.movie.data.imdbRating}}</p>
+          <p><span class="bold">imdbID:</span> {{data.movie.data.imdbID}}</p>
+          <p><span class="bold">Website: {{data.movie.data.Website}}</p></span>
+        </div>
 
-<p>Runtime: {{movie.data.Runtime}}</p>
-<p>Genre: {{movie.data.Genre}}</p>
-<p>Director: {{movie.data.Director}}</p>
-<p>Actors: {{movie.data.Actors}}</p>
-<p>Plot: {{movie.data.Plot}}</p>
-<p>Language: {{movie.data.Language}}</p>
-<p>Country: {{movie.data.Country}}</p>
-<p>imdbRating: {{movie.data.imdbRating}}</p>
-<p>imdbID: {{movie.data.imdbID}}</p>
-<p>Website: {{movie.data.Website}}</p>
+        <script>
+
+          document.querySelector('#want').onclick = function (event) {
+            event.preventDefault()
+            axios
+              .post(`/movies/want/{{data.movie.data.imdbID}}`)
+              .then(response => {
+                if (response.data.movieAssociated) {
+                  document.querySelector("#tick").style.visibility = "visible";
+                }
+              })
+
+          }
 
 
 
-<div>
-  <a href="/movies/want" class="btn">Want</a>
-<a href="/movies/watched" class="btn">Watched</a>
- <a href="/" class="btn">logout</a>
 
+
+
+          document.querySelector('#watched').onclick = function (event) {
+            event.preventDefault()
+            axios
+              .post("/movies/watched/{{data.movie.data.imdbID}}")
+              .then(response => {
+                if (response.data.movieAssociated) {
+                  document.querySelector("#tick1").style.visibility = "visible";
+                }
+              })
+
+          }
+
+
+        </script>
+      </div>
+    </div>
+  </div>
 </div>
-<script>
-
-  document.querySelector('#want').onclick = function (event) {
-    event.preventDefault()
-    axios
-      .post("/movies/want/{{movie.data.imdbID}}")
-      .then(response => {
-        if (response.data.movieAssociated) {
-          document.querySelector("#tick").style.display = "block"
-        }
-      })
-
-  }
-
-
-
-
-
-
-
-document.querySelector('#watched').onclick = function (event) {
-    event.preventDefault()
-    axios
-      .post("/movies/watched/{{movie.data.imdbID}}")
-      .then(response => {
-        if (response.data.movieAssociated) {
-          document.querySelector("#tick1").style.display = "block"
-        }
-      })
-
-  }
-
-
-</script>

@@ -1,91 +1,89 @@
-<h1>{{user.username}}</h1>
 
 
-
-
-<form action="/login" method="POST">
-  <label for="movie">Search movie</label>
-  <input id="movie" type="text" name="movie">
+<div id="hamb">
   
-
-  <button  id="search">
-    Search </button>
-</form>
-
-
- <a href="/" class="btn">logout</a>
-
-<section class ="container">
-<div class="movies-container">
-<div class ="movies-info">
-
-
+  <a href="/">
+   <img class="logoImageSmall"  src="/images/logo.png" alt="logo" /></a>
+  <button class="btn-logout-profile">
+     <a href="/">Logout</a>
+  </button>
 </div>
-
-
-</div>
-
-<a href="/movies/want" class="btn">Want</a>
-<a href="/movies/watched" class="btn">Watched</a>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-<script>
-  document.querySelector('#search').onclick = function (event){
-   event.preventDefault()
-  let movies = document.querySelector('#movie').value
-  
-axios
-.get(`https://www.omdbapi.com/?s=${movies}&apikey=507e1127&type=movie`)
-.then(movies=>{
-  let container = document.querySelector('.movies-container')
-  container.innerHTML = ""
-  movies.data.Search.forEach(movie => {
-  printMovie(movie)
-
-  })
+<div id="profileCont">
+  <div id="profileHeader">
+    <img src="/images/descarga.jpeg" id="avatar" alt="avatar" />
+    <h3 class="userName">{{user.username}}</h3>
+  </div>
+  <div class="btnContainer">
     
-})
-.catch(error=>{
-  console.log(error)
-})
-    //console.log(document.querySelector('#pelicula').value)
-}
 
-function printMovie(movies) {
- let container = document.querySelector('.movies-container')
- if(movies.Poster != "N/A"){
- container.innerHTML += `<div class="movies-info">
- <img src= ${movies.Poster} class="poster"></img>
- <div class="titulo">${movies.Title}</div>
- <div class="año">${movies.Year}</div>
- <a href="/movies/info-movie/${movies.imdbID}">see more</a>
+    <button class="btnWant left">
+      <a href="/movies/want">Want</a>
+    </button>
+    <button class="btnWatched">
+      <a href="/movies/watched">Watched</a>
+    </button>
+  </div>
+  <form action="/login" method="POST" class="formProfile">
+    <label for="movie" class="label-profile">Search movie</label>
+    <input class="imput-profile" id="movie" type="text" name="movie">
+    <button id="search" class="btn-profile">
+      Search
+    </button>
+  </form>
+  <div id="box">
+    <section class="container">
+      <div class="movies-container">
+        <!-- <div class="movies-info">
+          <div class="poster">Poster</div>
+          <div class="title">Title</div>
+          <div class="year">Year</div>-->
+      </div>
+  </div>
+  </section>
+  <script>
+    document.querySelector('#search').onclick = function (event) {
+      event.preventDefault()
+      let movies = document.querySelector('#movie').value
+      axios
+        .get(`https://www.omdbapi.com/?s=${movies}&apikey=507e1127&type=movie`)
+        .then(movies => {
+          let container = document.querySelector('.movies-container')
+          container.innerHTML = ""
+          movies.data.Search.forEach(movie => {
+            printMovie(movie)
+          })
+        })
+        .catch(error => {
+          console.log(error)
+        })
+      //console.log(document.querySelector('#pelicula').value)
+    }
+    function printMovie(movies) {
+      let container = document.querySelector('.movies-container')
+      if (movies.Poster != "N/A") {
+        container.innerHTML += `<div class="movies-info">
+          <img src= ${movies.Poster} class="poster-profile"></img>
+          <p class="title">${movies.Title}</p>
+            <p class="year">${movies.Year}</p>
+            <p class="linkProfile">
+               <a href="/movies/info-movie/${movies.imdbID}">see more</a>
+            </p>
  
-</div>`
-}
-
-else
-{
-  container.innerHTML += `<div class="movies-info">
+        </div>`
+      }
+      else {
+        container.innerHTML += `<div class="movies-info">
      
-    <img src="../images/no-image.jpeg"></img>
-
- <div class="titulo">${movies.Title}</div>
- <div class="año">${movies.Year}</div>
- <a href="/movies/info-movie/${movies.imdbID}">see more</a>
- 
-</div>`
-}}
-
-</script>
+      <img src="../images/no-image.jpeg"></img>
+      <p class="title">${movies.Title}</div>
+      <p class="year">${movies.Year}</p>
+  
+      <p class="linkProfile">
+        <a href="/movies/info-movie/${movies.imdbID}">see more</a>
+      </p>
+    </div>`
+      }
+    }
+  </script>
+</div>
+</div>

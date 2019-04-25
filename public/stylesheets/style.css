@@ -1,11 +1,8 @@
 body {
-  font-size: 20px;
+  font-size: 19px;
   display: flex;
   justify-content: center;
   font-family: 'Open Sans', sans-serif; }
-
-a {
-  text-decoration: none; }
 
 h2 {
   font-size: 2rem;
@@ -16,6 +13,15 @@ h2 {
 #container {
   width: 100%;
   height: 65vh; }
+
+a {
+  text-decoration: none; }
+
+.btnWant a {
+  color: white; }
+
+.btnWatched a {
+  color: white; }
 
 #header {
   width: 100%;
@@ -36,25 +42,11 @@ h2 {
   flex-direction: column;
   align-items: center; }
 
-.btn {
-  width: 9rem;
-  padding: 10px;
-  background-color: #F5BE49;
-  display: block;
-  border-radius: 20px;
-  margin: 20px 0px;
-  text-align: center;
-  color: white;
-  border: 0px; }
-
-.btn:hover {
+.btn-profile:hover {
   box-shadow: 10px 10px 11px -12px rgba(0, 0, 0, 0.75); }
 
-.top {
-  margin-top: 5rem; }
-
 #singupContainer {
-  width: 60%;
+  width: 30rem;
   height: 60vh;
   display: flex;
   justify-content: center;
@@ -62,21 +54,39 @@ h2 {
   flex-direction: column;
   margin-top: 135px; }
 
-label {
-  width: 100%;
+.btn-login, .btn-signup, .btn-index {
+  width: 9rem;
+  padding: 10px;
+  display: block;
+  border-radius: 20px;
+  margin: 20px 0px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  border: 0px;
+  background-color: #F5BE49; }
+
+.btn-login, .btn-signup, .btn-index:hover {
+  box-shadow: 10px 10px 11px -12px rgba(0, 0, 0, 0.75); }
+
+.label-login, .label-signup {
   text-align: center;
   color: white;
   margin: 1rem 0rem; }
+
+.label-profile {
+  /* text-align: center;*/
+  color: white;
+  /* margin: 1rem 0rem;*/ }
 
 #username,
 #password,
 #email {
   width: 80%;
-  padding: 0.3rem;
-  text-align: center; }
+  padding: 0.3rem; }
 
 #form-container {
-  width: 100%;
+  width: 35rem;
   height: 65vh;
   display: flex;
   justify-content: center;
@@ -93,39 +103,292 @@ label {
   color: #222277;
   font-weight: bold; }
 
-.white {
-  color: white; }
-
 #hamb {
   width: 100%;
-  height: 4rem;
+  height: 7vh;
   background-color: #f5f5f5;
-  position: fixed; }
+  position: fixed;
+  display: flex;
+  justify-content: space-between; }
 
-#hamb img {
+/*
+.logoImage {
+  width: 5rem;
+  height: 1rem;
+  padding: 1rem;
+}
+*/
+.logoImageInfo {
   width: 5rem;
   height: 1rem;
   padding: 1rem; }
 
+/*------empieza profile ----------*/
+#profileCont {
+  width: 80%;
+  height: auto;
+  margin-top: 3rem;
+  /*background-color: grey;*/ }
+
+#profileHeader {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /*background-color: red;*/
+  margin-top: 7vh; }
+
+.formProfile {
+  width: 100%;
+  height: 7vh;
+  font-size: 12px;
+  display: flex;
+  /* margin: 0 auto;*/ }
+
+#avatar {
+  background-color: #443838;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center; }
+
+#box {
+  width: 100%;
+  height: auto; }
+
+.white {
+  color: white; }
+
+.black {
+  color: black;
+  text-align: left; }
+
+.poster-profile {
+  width: 80%; }
+
+.container {
+  width: 100%;
+  display: flex;
+  color: black;
+  margin: 0 auto; }
+
+.movies-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px 0px; }
+
 @media (min-width: 500px) and (max-width: 800px) {
   #singupContainer {
-    width: 600px;
+    width: 60rem;
     margin-top: 135px; }
-  #hamb img {
-    width: 6rem; }
   #form-container {
-    width: 50%;
-    height: 65vh; } }
+    width: 35 rem;
+    height: 60vh; }
+  .label-profile {
+    font-size: 18px;
+    /*  padding: 3px 0px;width: 50%;*/ }
+  .poster-profile {
+    width: 100%;
+    height: 300px; }
+  #box {
+    width: 100%;
+    height: auto; }
+  .movies-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 10px 0px; }
+  .movies-info {
+    width: 40%;
+    margin: 15px; }
+  /* .black{
+   font-size:18px;
+   
+    margin-top: 0px; 
+    margin-left: 0px;
+  }
+  #movie{
+    margin-top: 0px; 
+    margin-left: 0px;
+    
+  }*/
+  .black {
+    font-size: 18px;
+    line-height: 1.5em; } }
 
 @media (min-width: 801px) {
+  #container0 {
+    width: 60%; }
   #singupContainer {
     width: 40%; }
   #form-container {
+    width: 35 rem;
+    height: 70vh;
+    /* margin-right: 15px;*/ }
+  /* .black  margin:0px 30px 0px 87px;*/
+  .logoImageSmall {
+    width: 100px;
+    padding: 10px; }
+  .poster-profile {
     width: 100%;
-    height: 65vh; }
-  #hamb img {
-    width: 6rem; }
+    height: 180px; }
   .logoImage {
-    width: 40%; } }
+    width: 40%; }
+  /*  .btn{
+      width: 1rem;
+     margin-left: 1rem;
+      padding: 5px;
+  }*/
+  .top {
+    margin-top: 5rem; }
+  .movies-container {
+    width: 58%;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 35px; }
+  .movies-info {
+    width: 20%;
+    margin: 2.5px; }
+  .userName {
+    margin-top: 5px;
+    font-size: 24px; }
+  .formProfile {
+    width: 100%;
+    height: 7vh;
+    font-size: 12px;
+    display: flex; }
+  .imput-profile {
+    flex-grow: 3;
+    margin-right: 20px;
+    /*   padding:5px;*/ }
+  .label-profile {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8em;
+    color: black; }
+  .btn-profile {
+    flex-grow: 1; }
+  .title, .bold {
+    font-weight: bold; }
+  .year, .linkProfile, .dataYearInfo {
+    font-size: 13px; }
+  .linkProfile a p {
+    color: #49b5f5; }
+  .btnContainer {
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: yellowgreen;*/
+    display: flex;
+    margin-bottom: 20px; }
+  .btn-logout-profile {
+    width: 90px;
+    height: 5vh;
+    padding: 5px;
+    background-color: #F5BE49;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    border: 0px;
+    margin-top: 5px; }
+  .btn-logout-profile a {
+    color: white; }
+  .btnWant, .btnWatched {
+    width: 5rem;
+    padding: 5px;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 0px 5px;
+    text-align: center;
+    color: white;
+    border: 0px;
+    background-color: #F5BE49; }
+  /*.btn{
+  width: 50px;
+  margin-left:45px;
+}*/
+  .btn-profile {
+    width: 5rem;
+    padding: 10px;
+    display: block;
+    border-radius: 20px;
+    /*  margin: 20px 0px;*/
+    text-align: center;
+    color: white;
+    border: 0px;
+    background-color: #F5BE49; }
+  #pic-info-movie {
+    width: 160px;
+    height: 220px; }
+  #contInfoMovie {
+    width: 100%;
+    display: flex;
+    margin-top: 40px; }
+  .picContInfoMovie {
+    height: auto;
+    width: 40%;
+    justify-content: flex-start; }
+  h3 {
+    font-size: 20px;
+    font-weight: bold; }
+  #container-info-movie {
+    height: auto;
+    width: 70%;
+    justify-content: flex-end; }
+  .contInfoMovie {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px; }
+  .info-movie {
+    margin-top: 50px; }
+  #want, #watched {
+    width: 7rem;
+    height: 35px;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 10px 5px;
+    text-align: center;
+    color: white;
+    border: 0px;
+    background-color: #F5BE49;
+    display: flex;
+    align-items: center; }
+  .icon {
+    width: 65%; }
+  #information {
+    font-size: 15px;
+    padding: 20px 0px;
+    line-height: 1.5em;
+    padding-left: 15px; }
+  .cyan {
+    color: #49b5f5; }
+  #upMovie {
+    line-height: 1.5em;
+    padding-left: 15px; }
+  .gray {
+    color: #b4adad; }
+  .btnBigInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row; }
+  img#avatarSmall {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-right: 15px; }
+  .elementsRight {
+    width: 200px;
+    display: flex;
+    align-items: center; } }
 
 /*# sourceMappingURL=style.css.map */
