@@ -7,7 +7,9 @@ const Movie = require('../models/movie');
 router.get("/profile", (req, res, next) => {
   User.findById(req.user.id)
     .then(user => {
-      res.render("movies/profile", {user})
+      res.render("movies/profile", {
+        user
+      })
     });
 });
 
@@ -18,8 +20,10 @@ router.get('/want', (req, res) => {
     .populate("wantMovies")
     .then(userInfo => {
       const movies = userInfo.wantMovies
+      const user = userInfo.username
       res.render("movies/want", {
-        movies
+        movies, user
+
       })
     })
     .catch(error => console.log(error))
@@ -31,8 +35,9 @@ router.get('/watched', (req, res) => {
     .populate("watchedMovies")
     .then(userInfo => {
       const moviesWatched = userInfo.watchedMovies
+      const user = userInfo.username
       res.render("movies/watched", {
-        moviesWatched
+        moviesWatched,user
       })
     })
     .catch(error => console.log(error))
@@ -56,9 +61,11 @@ router.get("/info-movie/:imdbID", (req, res, next) => {
               .then(movieSaved => {
                 const peliculas = req.user.wantMovies.map(e => e.toString())
                 const pelicula = movieSaved._id.toString()
-                let data = {movie: movieSaved, 
+                let data = {
+                  movie: movieSaved,
                   user: req.user,
-                  isWanted: peliculas.includes(pelicula)}
+                  isWanted: peliculas.includes(pelicula)
+                }
                 res.render("movies/info-movie", {
                   data
                 })
@@ -67,9 +74,11 @@ router.get("/info-movie/:imdbID", (req, res, next) => {
       } else {
         const peliculas = req.user.wantMovies.map(e => e.toString())
         const pelicula = foundMovie[0]._id.toString()
-          let data = {movie: foundMovie[0], 
-          user: req.user, 
-          isWanted: peliculas.includes(pelicula)}
+        let data = {
+          movie: foundMovie[0],
+          user: req.user,
+          isWanted: peliculas.includes(pelicula)
+        }
 
         res.render("movies/info-movie", {
           data
@@ -84,7 +93,7 @@ router.get("/info-movie/:imdbID", (req, res, next) => {
 })
 
 router.post('/want/:imdbID', (req, res) => {
-  
+
   Movie.findOne({
       imdbID: req.params.imdbID
     })
