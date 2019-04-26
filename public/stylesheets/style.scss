@@ -260,7 +260,7 @@ a {
 }
 
 .btnWant,
-.btnWatched {
+.btnWatched{
   width: 4rem;
   padding: 5px;
   justify-content: center;
@@ -665,6 +665,7 @@ img#avatarSmall {
     width: 100%;
     display: flex;
     flex-direction: row;
+    margin-left: 20px;
   }
 
   img#avatarSmall {
@@ -709,5 +710,13 @@ img#avatarSmall {
     height: 250px;
 
   }
+  .added{
+    padding-top: 20px;
+    font-size: 16px;
+    color:rgb(34, 34, 119);
+    width: 4rem;
+    height: 35px;
+    justify-content: center;
 
+  }
 }

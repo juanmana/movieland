@@ -492,7 +492,8 @@ img#avatarSmall {
   .btnBigInfo {
     width: 100%;
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    margin-left: 20px; }
   img#avatarSmall {
     width: 30px;
     height: 30px;
@@ -519,6 +520,13 @@ img#avatarSmall {
     margin-top: 35px; }
   #posterWatched {
     width: 22%;
-    height: 250px; } }
+    height: 250px; }
+  .added {
+    padding-top: 20px;
+    font-size: 16px;
+    color: #222277;
+    width: 4rem;
+    height: 35px;
+    justify-content: center; } }
 
 /*# sourceMappingURL=style.css.map */
