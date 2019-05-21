@@ -2,8 +2,7 @@ body {
   font-size: 19px;
   display: flex;
   justify-content: center;
-  font-family: 'Open Sans', sans-serif;
-
+  font-family: "Open Sans", sans-serif;
 }
 
 h2 {
@@ -64,7 +63,6 @@ a {
   align-items: center;
   flex-direction: column;
   margin-top: 135px;
-
 }
 
 .btn-login,
@@ -79,7 +77,7 @@ a {
   text-align: center;
   color: white;
   border: 0px;
-  background-color: #F5BE49;
+  background-color: #f5be49;
 }
 
 .btn-login,
@@ -97,7 +95,6 @@ a {
 
 .label-profile {
   color: white;
-
 }
 
 #username,
@@ -105,7 +102,6 @@ a {
 #email {
   width: 80%;
   padding: 0.3rem;
-
 }
 
 #form-container {
@@ -150,8 +146,6 @@ a {
   width: 80%;
   height: auto;
   margin-top: 3rem;
-
-
 }
 
 #profileHeader {
@@ -183,7 +177,6 @@ a {
 #box {
   width: 100%;
   height: auto;
-
 }
 
 .white {
@@ -193,12 +186,10 @@ a {
 .black {
   color: black;
   text-align: left;
-
 }
 
 .poster-profile {
   width: 80%;
-
 }
 
 .container {
@@ -206,7 +197,6 @@ a {
   display: flex;
   color: black;
   margin: 0 auto;
-
 }
 
 .movies-container {
@@ -215,7 +205,6 @@ a {
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 10px 0px;
-
 }
 
 /*------CAMBIOOOOS Login peq---------------*/
@@ -227,8 +216,6 @@ a {
   align-items: center;
   flex-direction: column;
   margin-top: 135px;
-
-
 }
 
 #form-container {
@@ -245,7 +232,6 @@ a {
 .logoImageSmall {
   width: 30%;
   padding: 10px;
-
 }
 
 .btn-profile {
@@ -256,12 +242,11 @@ a {
   text-align: center;
   color: white;
   border: 0px;
-  background-color: #F5BE49;
-
+  background-color: #f5be49;
 }
 
 .btnWant,
-.btnWatched{
+.btnWatched {
   width: 4rem;
   padding: 5px;
   justify-content: center;
@@ -270,7 +255,7 @@ a {
   text-align: center;
   color: white;
   border: 0px;
-  background-color: #F5BE49;
+  background-color: #f5be49;
 }
 
 .btnContainer {
@@ -278,26 +263,23 @@ a {
   justify-content: center;
   display: flex;
   margin-bottom: 20px;
-
 }
 
 .btn-logout-profile {
   width: 90px;
   height: 5vh;
   padding: 5px;
-  background-color: #F5BE49;
+  background-color: #f5be49;
   border-radius: 20px;
   text-align: center;
   color: white;
   border: 0px;
   margin-top: 5px;
-
 }
 
 .imput-profile {
   flex-grow: 2;
   height: 30px;
-
 }
 
 .movies-info {
@@ -309,7 +291,6 @@ a {
   width: 100px;
   display: flex;
   align-items: center;
-
 }
 
 img#avatarSmall {
@@ -317,20 +298,17 @@ img#avatarSmall {
   height: 20px;
   border-radius: 100%;
   margin-right: 15px;
-
 }
 
 #container0 {
   width: 100%;
   height: auto;
-
 }
 
 #pic-info-movie {
   width: 250px;
   height: 220px;
   margin: 0 auto;
-
 }
 
 .picContInfoMovie {
@@ -338,7 +316,6 @@ img#avatarSmall {
   width: 100%;
   display: flex;
   justify-content: center;
-
 }
 
 .btnContainer {
@@ -358,7 +335,7 @@ img#avatarSmall {
   text-align: center;
   color: white;
   border: 0px;
-  background-color: #F5BE49;
+  background-color: #f5be49;
   display: flex;
   align-items: center;
 }
@@ -384,10 +361,9 @@ img#avatarSmall {
 
 .info-movie {
   margin-top: 50px;
-
 }
 
-@media (min-width: 500px) and (max-width:800px) {
+@media (min-width: 500px) and (max-width: 800px) {
   #singupContainer {
     width: 60rem;
     margin-top: 135px;
@@ -399,9 +375,7 @@ img#avatarSmall {
   }
 
   .label-profile {
-
     font-size: 18px;
-
   }
 
   .poster-profile {
@@ -412,7 +386,6 @@ img#avatarSmall {
   #box {
     width: 100%;
     height: auto;
-
   }
 
   .movies-container {
@@ -421,14 +394,11 @@ img#avatarSmall {
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 10px 0px;
-
-
   }
 
   .movies-info {
     width: 40%;
     margin: 15px;
-
   }
 
   .black {
@@ -477,7 +447,6 @@ img#avatarSmall {
     flex-wrap: wrap;
     margin: 0 auto;
     margin-top: 35px;
-
   }
 
   .movies-info {
@@ -496,7 +465,6 @@ img#avatarSmall {
     height: 7vh;
     font-size: 12px;
     display: flex;
-
   }
 
   .imput-profile {
@@ -522,12 +490,10 @@ img#avatarSmall {
     font-weight: bold;
   }
 
-
   .year,
   .linkProfile,
   .dataYearInfo {
     font-size: 13px;
-
   }
 
   .linkProfile a p {
@@ -545,13 +511,13 @@ img#avatarSmall {
     width: 90px;
     height: 5vh;
     padding: 5px;
-    background-color: #F5BE49;
+    background-color: #f5be49;
     border-radius: 20px;
     text-align: center;
     color: white;
     border: 0px;
     margin-top: 5px;
-    margin-left:5px;
+    margin-left: 5px;
   }
 
   .btn-logout-profile a {
@@ -568,8 +534,7 @@ img#avatarSmall {
     text-align: center;
     color: white;
     border: 0px;
-    background-color: #F5BE49;
-
+    background-color: #f5be49;
   }
 
   .btn-profile {
@@ -581,7 +546,7 @@ img#avatarSmall {
     text-align: center;
     color: white;
     border: 0px;
-    background-color: #F5BE49;
+    background-color: #f5be49;
   }
 
   #pic-info-movie {
@@ -635,7 +600,7 @@ img#avatarSmall {
     text-align: center;
     color: white;
     border: 0px;
-    background-color: #F5BE49;
+    background-color: #f5be49;
     display: flex;
     align-items: center;
   }
@@ -682,12 +647,11 @@ img#avatarSmall {
     width: 150px;
     display: flex;
     align-items: center;
-    }
+  }
 
   .picWatched {
     width: 130px;
     height: 180px;
-
   }
 
   #containerPictureWatched {
@@ -696,7 +660,6 @@ img#avatarSmall {
   }
 
   #containerWatched {
-
     width: 60%;
     height: auto;
     font-size: 18px;
@@ -705,27 +668,24 @@ img#avatarSmall {
     flex-wrap: wrap;
     margin: 0 auto;
     margin-top: 35px;
-
   }
 
   #posterWatched {
     width: 22%;
     height: 250px;
-
   }
-  .added{
+  .added {
     padding-top: 20px;
     font-size: 16px;
-    color:rgb(34, 34, 119);
+    color: rgb(34, 34, 119);
     width: 4rem;
     height: 35px;
     justify-content: center;
-
   }
-  #moveBtn{
-    margin-right:12px;
+  #moveBtn {
+    margin-right: 12px;
   }
-  input{
-    outline:0px;
+  input {
+    outline: 0px;
   }
 }
